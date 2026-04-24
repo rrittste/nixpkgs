@@ -5192,6 +5192,8 @@ self: super: with self; {
 
   ewmhlib = callPackage ../development/python-modules/ewmhlib { };
 
+  exa-py = callPackage ../development/python-modules/exa-py { };
+
   example-robot-data = callPackage ../development/python-modules/example-robot-data {
     inherit (pkgs) example-robot-data;
   };
@@ -5332,6 +5334,8 @@ self: super: with self; {
   faker = callPackage ../development/python-modules/faker { };
 
   fakeredis = callPackage ../development/python-modules/fakeredis { };
+
+  fal-client = callPackage ../development/python-modules/fal-client { };
 
   falcon = callPackage ../development/python-modules/falcon { };
 
@@ -7141,6 +7145,8 @@ self: super: with self; {
   homevolt = callPackage ../development/python-modules/homevolt { };
 
   homf = callPackage ../development/python-modules/homf { };
+
+  honcho-ai = callPackage ../development/python-modules/honcho-ai { };
 
   hoomd-blue = callPackage ../development/python-modules/hoomd-blue { };
 
@@ -12112,6 +12118,8 @@ self: super: with self; {
   paragraphs = callPackage ../development/python-modules/paragraphs { };
 
   parallel-ssh = callPackage ../development/python-modules/parallel-ssh { };
+
+  parallel-web = callPackage ../development/python-modules/parallel-web { };
 
   param = callPackage ../development/python-modules/param { };
 
