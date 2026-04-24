@@ -13,8 +13,10 @@
 
 python3Packages.buildPythonApplication (finalAttrs: {
   pname = "hermes-agent";
-  version = "0.10.0";
+  version = "2026.4.16";
   pyproject = true;
+
+  pythonRemoveTests = true;
 
   src = fetchFromGitHub {
     owner = "NousResearch";
@@ -110,6 +112,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
     ])
   ];
 
+  # Tests require network access and API keys
   doCheck = false;
 
   passthru.updateScript = nix-update-script { };
@@ -119,7 +122,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
     homepage = "https://github.com/NousResearch/hermes-agent";
     changelog = "https://github.com/NousResearch/hermes-agent/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
-    maintainers = [ ];
+    maintainers = [ lib.maintainers.rrittste ];
     mainProgram = "hermes";
     platforms = lib.platforms.unix;
   };
