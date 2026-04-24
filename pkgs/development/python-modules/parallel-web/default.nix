@@ -2,7 +2,8 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
-  setuptools,
+  hatchling,
+  hatch-fancy-pypi-readme,
 
   anyio,
   distro,
@@ -24,7 +25,15 @@ buildPythonPackage (finalAttrs: {
     hash = "sha256-x/usp9kg75SNok4PFuGkuiBTYeGJMgvhOjcEsMP6L+0=";
   };
 
-  build-system = [ setuptools ];
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-fail 'hatchling==1.26.3' 'hatchling'
+  '';
+
+  build-system = [
+    hatchling
+    hatch-fancy-pypi-readme
+  ];
 
   dependencies = [
     anyio

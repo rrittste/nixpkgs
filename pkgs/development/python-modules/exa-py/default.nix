@@ -2,7 +2,7 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  setuptools,
+  poetry-core,
 
   httpx,
   httpcore,
@@ -19,11 +19,12 @@ buildPythonPackage (finalAttrs: {
   pyproject = true;
 
   src = fetchPypi {
-    inherit (finalAttrs) pname version;
+    pname = "exa_py";
+    inherit (finalAttrs) version;
     hash = "sha256-LNX+LUfY4CIfh9yyvg8AfMCh8KZDsW38WGqxQhmY9Pw=";
   };
 
-  build-system = [ setuptools ];
+  build-system = [ poetry-core ];
 
   dependencies = [
     httpx
